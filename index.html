@@ -1,62 +1,185 @@
+Bài 1
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Form Đánh Giá</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>company</h4>
-                    <ul>
-                        <li><a href ="#">about us</a></li>
-                        <li><a href ="#">our services</a></li>
-                        <li><a href ="#">privacy policy</a></li>
-                        <li><a href ="#">afiliate program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href ="#">FAQ</a></li>
-                        <li><a href ="#">shipping</a></li>
-                        <li><a href ="#">returns</a></li>
-                        <li><a href ="#">order status</a></li>
-                        <li><a href ="#">payment options</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>online shop</h4>
-                    <ul>
-                        <li><a href ="#">watch</a></li>
-                        <li><a href ="#">bag</a></li>
-                        <li><a href ="#">shoes</a></li>
-                        <li><a href ="#">dress</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                      <li>
-    <form action="" class="form-search">
-          <div class="search-box">
-            <input type="text" name="" id="">
-            <button class="btn" type="submit">Search</button>
-      </div>
+
+<div class="container">
+    <h2>Đánh Giá Sản Phẩm</h2>
+
+    <form action="/submit_review" method="post">
+        <label for="review">Đánh Giá:</label>
+        <textarea id="review" name="review" rows="6" required></textarea>
+
+        <input type="submit" value="Gửi Đánh Giá">
     </form>
-  </li>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+</div>
+
 </body>
 </html>
+
+
+Bài 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiển thị ngày giờ hiện tại</title>
+<script>
+function displayCurrentTime() {
+    var now = new Date();
+    var date = now.toLocaleDateString();
+    var time = now.toLocaleTimeString();
+    document.getElementById('currentDateTime').innerHTML = date + ' ' + time;
+}
+// Cập nhật thời gian mỗi giây
+setInterval(displayCurrentTime, 1000);
+</script>
+</head>
+<body>
+<p>Ngày giờ hiện tại:</p>
+<p id="currentDateTime"></p>
+</body>
+</html>
+
+Bài 4
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: lightPink;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.login-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #fff;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.login-form h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  border: 3px solid #fff;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+.login-form input[type="submit"] {
+  width: 95%;
+  padding: 10px;
+  background-color: lightPink;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+  .bai6-2button{
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+}
+.bai6-button{
+margin: 10px;
+}
+</style>
+</head>
+<body>
+  <div class="login-form">
+    <h1>Log In</h1>
+    <form action="/login" method="post">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Log In">
+    </form>
+    <center>
+       <div class="bai6-button">
+            <span class="bai6-2button">
+                Forgot 
+            </span>
+            <span class="bai6-2button">
+                Sign up
+            </span>
+        </div>
+      </center>
+  </div>
+</body>
+</html>
+
